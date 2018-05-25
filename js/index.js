@@ -121,7 +121,7 @@ $(function() {
 		tempStr += '<div class="form-group">';
 		tempStr += '<p>DApp名称 </p>';
 		tempStr += '<textarea class="form-control" rows="1" id="name" >中文名-英文名</textarea>';
-		tempStr += '<p>DApp源码挂载地址 请填写16位以内数字/英文字母 不要与已有地址重复</br>不需要输入网站域名前缀等，不需要输入‘/’，‘；’等符号</br>提交成功后你的DApp将可以在‘http://dapps.ga/<你的地址>’访问</p>';
+		tempStr += '<p>DApp源码挂载地址 请填写16位以内数字/英文字母 不要与已有地址重复</br>不需要输入网站域名前缀等，不需要输入‘/’，‘；’等符号</br>提交成功后你的DApp将可以在永久地址‘http://alldapp.github.io/<你的地址>’或短地址‘http://dapps.ga/<你的地址>’访问</p>';
 		tempStr += '<textarea class="form-control" rows="1" id="ids" ><你的地址></textarea>';
 		tempStr += '<p>如果可以公开源码，请打包源码上传网盘并将地址贴在下方描述中。</br>如不想公开源码，请将源码打包/网盘地址发送至LowEntropy@yahoo.com</p>';
 		tempStr += '<p>DApp描述/介绍</p>';
@@ -189,7 +189,7 @@ function save(){
 		var to = dappAddress;
 		var value = "0";
 		var callFunction = "savedapp";
-		var callArgs = "[\"" + name + "	地址:http://dapps.ga/" + ids + "		描述:" + content + "\"]";
+		var callArgs = "[\"" + name + "	地址:http://alldapp.github.io/" + ids + "/		描述:" + content + "\"]";
 		nebpay.call(to, value, callFunction, callArgs, {
 			listener: function(resp) {
 				console.log(JSON.stringify(resp));
